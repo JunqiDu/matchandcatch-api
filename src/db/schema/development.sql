@@ -1,76 +1,81 @@
-WITH days(day) AS (
-  VALUES ( 'Monday' ), ( 'Tuesday' ), ( 'Wednesday' ), ( 'Thursday' ), ( 'Friday' )
-)
-INSERT INTO days (name)
-SELECT day FROM days;
+INSERT INTO sellers (name)
+VALUES 
+('WoYong'),
+('Joseph'),
+('Mingun'),
+('Francis'),
+('Kate'),
+('Jonathan'),
+('Melisa'),
+('Craig');
 
-WITH times(time) AS (
-	VALUES ('12pm'), ('1pm'), ('2pm'), ('3pm'), ('4pm')
-)
-INSERT INTO appointments (time, day_id)
-SELECT time, id as day_id FROM days, times ORDER BY day_id, time;
-
-INSERT INTO interviewers (name, avatar)
+INSERT INTO vehicles (seller_id, Maker, Model, Year, Milage)
 VALUES
-  ('Sylvia Palmer', 'https://i.imgur.com/LpaY82x.png'),
-  ('Tori Malcolm', 'https://i.imgur.com/Nmx0Qxo.png'),
-  ('Mildred Nazir', 'https://i.imgur.com/T2WwVfS.png'),
-  ('Cohana Roy', 'https://i.imgur.com/FK8V841.jpg'),
-  ('Sven Jones', 'https://i.imgur.com/twYrpay.jpg'),
-  ('Susan Reynolds', 'https://i.imgur.com/TdOAdde.jpg'),
-  ('Alec Quon', 'https://i.imgur.com/3tVgsra.jpg'),
-  ('Viktor Jain', 'https://i.imgur.com/iHq8K8Z.jpg'),
-  ('Lindsay Chu', 'https://i.imgur.com/nPywAp1.jpg'),
-  ('Samantha Stanic', 'https://i.imgur.com/okB9WKC.jpg');
+(1, 'BMW', 'X3', 2020, 120000),
+(2, 'Audi', 'Q7', 2019, 140000),
+(3, 'Hyundai', 'Genesis', 2021, 150000),
+(1, 'Honda', 'Civi', 2022, 160000),
+(1, 'Honda', 'Civi', 2022, 160000),
+(1, 'Honda', 'Civi', 2022, 160000),
+(1, 'Honda', 'Civi', 2022, 160000),
+(1, 'Honda', 'Civi', 2022, 160000),
+(1, 'Honda', 'Civi', 2022, 160000),
+(1, 'Honda', 'Civi', 2022, 160000);
 
-INSERT INTO available_interviewers (day_id, interviewer_id)
-SELECT 1 as day_id, interviewers.interviewer_id FROM ( SELECT id AS interviewer_id FROM interviewers ORDER BY RANDOM() LIMIT 5 ) interviewers;
+INSERT INTO vehicles (seller_id, Maker, Model, Year, Milage, Sell_Status, Approve_Status)
+VALUES
+(4, 'BMW', 'X3', 2020, 120000, TRUE, TRUE),
+(5, 'BMW', 'X3', 2020, 120000, TRUE, TRUE),
+(6, 'BMW', 'X3', 2020, 120000, TRUE, TRUE),
+(4, 'BMW', 'X3', 2020, 120000, TRUE, TRUE),
+(5, 'BMW', 'X3', 2020, 120000, TRUE, TRUE),
+(6, 'BMW', 'X3', 2020, 120000, TRUE, TRUE),
+(7, 'BMW', 'X3', 2020, 120000, TRUE, TRUE),
+(2, 'BMW', 'X3', 2020, 120000, TRUE, TRUE),
+(6, 'BMW', 'X3', 2020, 120000, TRUE, TRUE),
+(4, 'BMW', 'X3', 2020, 120000, TRUE, TRUE);
 
-INSERT INTO available_interviewers (day_id, interviewer_id)
-SELECT 2 as day_id, interviewers.interviewer_id FROM ( SELECT id AS interviewer_id FROM interviewers ORDER BY RANDOM() LIMIT 5 ) interviewers;
+INSERT INTO dealers (name)
+VALUES
+('Sam'),
+('Ryan'),
+('John'),
+('Harry');
 
-INSERT INTO available_interviewers (day_id, interviewer_id)
-SELECT 3 as day_id, interviewers.interviewer_id FROM ( SELECT id AS interviewer_id FROM interviewers ORDER BY RANDOM() LIMIT 5 ) interviewers;
+INSERT INTO images (vehicle_id, source)
+VALUES
+(1,'https://cdn.luxe.digital/media/20230105073805/fastest-cars-world-2023-list-ranking-luxe-digital-1200x600.jpg'),
+(2,'https://carwow-uk-wp-3.imgix.net/18015-MC20BluInfinito-scaled-e1666008987698.jpg'),
+(3,'https://carwow-uk-wp-1.imgix.net/McLaren-720S-1.jpg?auto=format&cs=tinysrgb&fit=clip&ixlib=rb-1.1.0&q=60&w=1920'),
+(4,'https://carwow-uk-wp-3.imgix.net/Audi-R8-5.jpg?auto=format&cs=tinysrgb&fit=clip&ixlib=rb-1.1.0&q=60&w=1920'),
+(5,'https://carwow-uk-wp-3.imgix.net/Audi-R8-5.jpg?auto=format&cs=tinysrgb&fit=clip&ixlib=rb-1.1.0&q=60&w=1920'),
+(6,'https://carwow-uk-wp-3.imgix.net/Audi-R8-5.jpg?auto=format&cs=tinysrgb&fit=clip&ixlib=rb-1.1.0&q=60&w=1920'),
+(7,'https://carwow-uk-wp-3.imgix.net/Audi-R8-5.jpg?auto=format&cs=tinysrgb&fit=clip&ixlib=rb-1.1.0&q=60&w=1920'),
+(8,'https://carwow-uk-wp-3.imgix.net/Audi-R8-5.jpg?auto=format&cs=tinysrgb&fit=clip&ixlib=rb-1.1.0&q=60&w=1920'),
+(9,'https://carwow-uk-wp-3.imgix.net/Audi-R8-5.jpg?auto=format&cs=tinysrgb&fit=clip&ixlib=rb-1.1.0&q=60&w=1920'),
+(10,'https://carwow-uk-wp-3.imgix.net/Audi-R8-5.jpg?auto=format&cs=tinysrgb&fit=clip&ixlib=rb-1.1.0&q=60&w=1920');
 
-INSERT INTO available_interviewers (day_id, interviewer_id)
-SELECT 4 as day_id, interviewers.interviewer_id FROM ( SELECT id AS interviewer_id FROM interviewers ORDER BY RANDOM() LIMIT 5 ) interviewers;
 
-INSERT INTO available_interviewers (day_id, interviewer_id)
-SELECT 5 as day_id, interviewers.interviewer_id FROM ( SELECT id AS interviewer_id FROM interviewers ORDER BY RANDOM() LIMIT 5 ) interviewers;
+INSERT INTO auctions(vehicle_id, dealer_id, bid)
+VALUES
+(1, 1, 30000),
+(1, 2, 28000),
+(1, 3, 29000),
+(2, 1, 110000),
+(2, 2, 95000),
+(2, 3, 100000);
 
-WITH
-appointments AS (
-  SELECT id as appointment_id, day_id FROM appointments ORDER BY RANDOM() LIMIT 10
-),
-students(name) AS(
-  VALUES
-    ('Liam Martinez'),
-    ('Richard Wong'),
-    ('Lydia Miller-Jones'),
-    ('Archie Cohen'),
-    ('Chad Takahashi'),
-    ('Leopold Silvers'),
-    ('Maria Boucher'),
-    ('Jamal Jordan'),
-    ('Michael Chan-Montoya'),
-    ('Yuko Smith')
-)
-INSERT INTO interviews (student, appointment_id, interviewer_id)
-SELECT
-  DISTINCT ON 
-  (s.name) name,
-  a.appointment_id AS appointment_id,
-  available_interviewers.interviewer_id AS interviewer_id
-FROM (
-  SELECT
-    *, row_number() OVER(ORDER BY appointment_id) AS rnum
-  FROM appointments
-) AS a
-JOIN (
-  SELECT
-    *, row_number() OVER(ORDER BY name) AS rnum
-  FROM students
-) AS s
-ON a.rnum = s.rnum
-JOIN available_interviewers
-ON a.day_id = available_interviewers.day_id;
+INSERT INTO transactions(dealer_id, vehicle_id)
+VALUES
+(1,11),
+(2,12),
+(1,13),
+(3,14),
+(4,15),
+(4,16),
+(3,17),
+(1,18),
+(2,19),
+(1,20);
+
+
