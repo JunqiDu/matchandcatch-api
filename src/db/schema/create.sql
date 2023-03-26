@@ -32,7 +32,7 @@ CREATE TABLE auctions (
   id SERIAL PRIMARY KEY NOT NULL,
   vehicle_id INTEGER REFERENCES vehicles(id) ON DELETE CASCADE,
   dealer_id INTEGER REFERENCES dealers(id) ON DELETE CASCADE,
-  bid int NOT NULL,
+  price int,
   selected BOOLEAN DEFAULT FALSE
 );
 
@@ -46,6 +46,6 @@ CREATE TABLE transactions (
   id SERIAL PRIMARY KEY NOT NULL,
   vehicle_id INTEGER REFERENCES vehicles(id) ON DELETE CASCADE,
   dealer_id INTEGER REFERENCES dealers(id) ON DELETE CASCADE,
-  price int,
-  date TIMESTAMP
-)
+  price int NOT NULL,
+  selected BOOLEAN DEFAULT FALSE
+);

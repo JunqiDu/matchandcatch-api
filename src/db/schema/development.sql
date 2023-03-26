@@ -15,12 +15,12 @@ VALUES
 (2, 'Audi', 'Q7', 2019, 140000),
 (3, 'Hyundai', 'Genesis', 2021, 150000),
 (1, 'Honda', 'Civi', 2022, 160000),
-(1, 'Honda', 'Civi', 2022, 160000),
-(1, 'Honda', 'Civi', 2022, 160000),
-(1, 'Honda', 'Civi', 2022, 160000),
-(1, 'Honda', 'Civi', 2022, 160000),
-(1, 'Honda', 'Civi', 2022, 160000),
-(1, 'Honda', 'Civi', 2022, 160000);
+(2, 'Honda', 'Civi', 2022, 160000),
+(4, 'Honda', 'Civi', 2022, 160000),
+(5, 'Honda', 'Civi', 2022, 160000),
+(6, 'Honda', 'Civi', 2022, 160000),
+(7, 'Honda', 'Civi', 2022, 160000),
+(2, 'Honda', 'Civi', 2022, 160000);
 
 INSERT INTO vehicles (seller_id, Maker, Model, Year, Milage, Sell_Status, Approve_Status)
 VALUES
@@ -56,7 +56,7 @@ VALUES
 (10,'https://carwow-uk-wp-3.imgix.net/Audi-R8-5.jpg?auto=format&cs=tinysrgb&fit=clip&ixlib=rb-1.1.0&q=60&w=1920');
 
 
-INSERT INTO auctions(vehicle_id, dealer_id, bid)
+INSERT INTO auctions (vehicle_id, dealer_id, price)
 VALUES
 (1, 1, 30000),
 (1, 2, 28000),
@@ -65,17 +65,15 @@ VALUES
 (2, 2, 95000),
 (2, 3, 100000);
 
-INSERT INTO transactions(dealer_id, vehicle_id)
+INSERT INTO auctions (dealer_id, vehicle_id, price, selected)
 VALUES
-(1,11),
-(2,12),
-(1,13),
-(3,14),
-(4,15),
-(4,16),
-(3,17),
-(1,18),
-(2,19),
-(1,20);
-
-
+(1,11, 30000, true),
+(2,12, 12345, true),
+(1,13, 54311, true),
+(3,14, 98231, true),
+(4,15, 30000, true),
+(4,16, 12345, true),
+(3,17, 52341, true),
+(1,18, 99999, true),
+(2,19, 77777, true),
+(1,20, 22222, true);

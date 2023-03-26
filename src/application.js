@@ -10,14 +10,12 @@ const app = express();
 
 const db = require("./db");
 
-const days = require("./routes/days");
-const appointments = require("./routes/appointments");
 const vehicles = require("./routes/vehicles");
 const auctions = require("./routes/auctions");
 const dealers = require("./routes/dealers");
 const images = require("./routes/images");
 const sellers = require("./routes/sellers");
-const transactions = require("./routes/transactions");
+
 function read(file) {
   return new Promise((resolve, reject) => {
     fs.readFile(
@@ -41,14 +39,12 @@ module.exports = function application(
   app.use(helmet());
   app.use(bodyparser.json());
 
-  //app.use("/api", days(db));
-  //app.use("/api", appointments(db, actions.updateAppointment));
   app.use("/api", vehicles(db));
   app.use("/api", auctions(db));
   app.use("/api", dealers(db));
   app.use("/api", images(db));
   app.use("/api", sellers(db));
-  app.use("/api", transactions(db));
+
   if (ENV === "development" || ENV === "test") {
     Promise.all([
       read(path.resolve(__dirname, `db/schema/create.sql`)),
