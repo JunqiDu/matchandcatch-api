@@ -15,7 +15,7 @@ const auctions = require("./routes/auctions");
 const dealers = require("./routes/dealers");
 const images = require("./routes/images");
 const sellers = require("./routes/sellers");
-
+const currentuser = require("./routes/currentuser");
 function read(file) {
   return new Promise((resolve, reject) => {
     fs.readFile(
@@ -44,7 +44,7 @@ module.exports = function application(
   app.use("/api", dealers(db));
   app.use("/api", images(db));
   app.use("/api", sellers(db));
-
+  app.use("/api", currentuser(db));
   if (ENV === "development" || ENV === "test") {
     Promise.all([
       read(path.resolve(__dirname, `db/schema/create.sql`)),

@@ -1,13 +1,13 @@
-INSERT INTO sellers (name)
+INSERT INTO sellers (name, email, password)
 VALUES 
-('WoYong'),
-('Joseph'),
-('Mingun'),
-('Francis'),
-('Kate'),
-('Jonathan'),
-('Melisa'),
-('Craig');
+('WoYong', 'woyong@lhl.com', '1'),
+('Joseph', 'joseph@lhl.com', '2'),
+('Mingun', 'mingun@lhl.com', '3'),
+('Francis','francis@lhl.com', '4'),
+('Kate', 'kate@lhl.com', '5'),
+('Jonathan', 'johnathan@lhl.com', '6'),
+('Melisa', 'melisa@lhl.com', '7'),
+('Craig', 'craig@lhl.com', '8');
 
 INSERT INTO vehicles (seller_id, Maker, Model, Year, Milage)
 VALUES
@@ -35,12 +35,12 @@ VALUES
 (6, 'BMW', 'X3', 2020, 120000, TRUE, TRUE),
 (4, 'BMW', 'X3', 2020, 120000, TRUE, TRUE);
 
-INSERT INTO dealers (name)
+INSERT INTO dealers (name, email, password)
 VALUES
-('Sam'),
-('Ryan'),
-('John'),
-('Harry');
+('Sam', 'sam@sam.com','sam'),
+('Ryan', 'ryan@ryan.com','ryan'),
+('Harry', 'harry@harry.com', 'harry'),
+('Ron', 'ron@ron.com', 'ron');
 
 INSERT INTO images (vehicle_id, source)
 VALUES
@@ -53,8 +53,17 @@ VALUES
 (7,'https://carwow-uk-wp-3.imgix.net/Audi-R8-5.jpg?auto=format&cs=tinysrgb&fit=clip&ixlib=rb-1.1.0&q=60&w=1920'),
 (8,'https://carwow-uk-wp-3.imgix.net/Audi-R8-5.jpg?auto=format&cs=tinysrgb&fit=clip&ixlib=rb-1.1.0&q=60&w=1920'),
 (9,'https://carwow-uk-wp-3.imgix.net/Audi-R8-5.jpg?auto=format&cs=tinysrgb&fit=clip&ixlib=rb-1.1.0&q=60&w=1920'),
-(10,'https://carwow-uk-wp-3.imgix.net/Audi-R8-5.jpg?auto=format&cs=tinysrgb&fit=clip&ixlib=rb-1.1.0&q=60&w=1920');
-
+(10,'https://carwow-uk-wp-3.imgix.net/Audi-R8-5.jpg?auto=format&cs=tinysrgb&fit=clip&ixlib=rb-1.1.0&q=60&w=1920'),
+(11,'https://carwow-uk-wp-3.imgix.net/Audi-R8-5.jpg?auto=format&cs=tinysrgb&fit=clip&ixlib=rb-1.1.0&q=60&w=1920'),
+(12,'https://carwow-uk-wp-3.imgix.net/Audi-R8-5.jpg?auto=format&cs=tinysrgb&fit=clip&ixlib=rb-1.1.0&q=60&w=1920'),
+(13,'https://carwow-uk-wp-3.imgix.net/Audi-R8-5.jpg?auto=format&cs=tinysrgb&fit=clip&ixlib=rb-1.1.0&q=60&w=1920'),
+(14,'https://carwow-uk-wp-3.imgix.net/Audi-R8-5.jpg?auto=format&cs=tinysrgb&fit=clip&ixlib=rb-1.1.0&q=60&w=1920'),
+(15,'https://carwow-uk-wp-3.imgix.net/Audi-R8-5.jpg?auto=format&cs=tinysrgb&fit=clip&ixlib=rb-1.1.0&q=60&w=1920'),
+(16,'https://carwow-uk-wp-3.imgix.net/Audi-R8-5.jpg?auto=format&cs=tinysrgb&fit=clip&ixlib=rb-1.1.0&q=60&w=1920'),
+(17,'https://carwow-uk-wp-3.imgix.net/Audi-R8-5.jpg?auto=format&cs=tinysrgb&fit=clip&ixlib=rb-1.1.0&q=60&w=1920'),
+(18,'https://carwow-uk-wp-3.imgix.net/Audi-R8-5.jpg?auto=format&cs=tinysrgb&fit=clip&ixlib=rb-1.1.0&q=60&w=1920'),
+(19,'https://carwow-uk-wp-3.imgix.net/Audi-R8-5.jpg?auto=format&cs=tinysrgb&fit=clip&ixlib=rb-1.1.0&q=60&w=1920'),
+(20,'https://carwow-uk-wp-3.imgix.net/Audi-R8-5.jpg?auto=format&cs=tinysrgb&fit=clip&ixlib=rb-1.1.0&q=60&w=1920');
 
 INSERT INTO auctions (vehicle_id, dealer_id, price)
 VALUES
@@ -77,3 +86,8 @@ VALUES
 (1,18, 99999, true),
 (2,19, 77777, true),
 (1,20, 22222, true);
+
+INSERT INTO currentuser(id)
+VALUES
+(0)
+

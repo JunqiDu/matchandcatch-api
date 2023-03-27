@@ -4,6 +4,7 @@ DROP TABLE IF EXISTS dealers CASCADE;
 DROP TABLE IF EXISTS auctions CASCADE;
 DROP TABLE IF EXISTS images CASCADE;
 DROP TABLE IF EXISTS transactions CASCADE;
+DROP TABLE IF EXISTS currentuser CASCADE;
 CREATE TABLE sellers (
   id SERIAL PRIMARY KEY NOT NULL,
   name VARCHAR(255) NOT NULL,
@@ -25,7 +26,9 @@ CREATE TABLE vehicles (
 
 CREATE TABLE dealers (
   id SERIAL PRIMARY KEY NOT NULL,
-  name VARCHAR(255)
+  name VARCHAR(255),
+  email VARCHAR(255),
+  password VARCHAR (255)
 );
 
 CREATE TABLE auctions (
@@ -49,3 +52,10 @@ CREATE TABLE transactions (
   price int NOT NULL,
   selected BOOLEAN DEFAULT FALSE
 );
+
+CREATE TABLE currentuser (
+  id INT PRIMARY KEY,
+  admin BOOLEAN DEFAULT FALSE,
+  status BOOLEAN DEFAULT FALSE,
+  name VARCHAR (255)
+)
